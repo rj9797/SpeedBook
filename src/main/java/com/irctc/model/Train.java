@@ -8,6 +8,6 @@ import lombok.Data;
 public class Train {
     private BigInteger id;
     private String name;
-    private BigInteger uid;
+    private Integer uid;
     private Integer total_seats;
 }
