@@ -1,5 +1,8 @@
 package com.irctc.model;
 
-public class TrainBookingRequestVO {
+import java.math.BigInteger;
 
+public class TrainBookingRequestVO {
+	private Integer trainId;
+	private Integer passengerId;
 }
