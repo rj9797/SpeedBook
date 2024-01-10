@@ -6,5 +6,7 @@ RUN mvn clean install
 
 FROM openjdk:17-alpine
 WORKDIR /app
-COPY --from=build /app/target/irctc-0.0.1-SNAPSHOT.jar ./speed-book-build-1.0.jar
+COPY /target/irctc-0.0.1-SNAPSHOT.jar ./speed-book-build-1.0.jar
 EXPOSE 8080
+RUN chmod +x /app/irctc-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/app/irctc-0.0.1-SNAPSHOT.jar"]
