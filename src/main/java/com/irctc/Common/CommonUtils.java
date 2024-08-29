@@ -1,4 +1,4 @@
-package com.irctc.Common;
+package com.irctc.common;
 
 import java.lang.reflect.Type;
 
