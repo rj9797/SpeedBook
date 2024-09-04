@@ -1,5 +1,5 @@
 ## USER_TABLE
 
-CREATE SEQUENCE irctc_user_seq;
+CREATE SEQUENCE train_seq;
 
-create table irctc_user (id INT primary key DEFAULT nexval('irctc_user_seq'),first_name VARCHAR(255),last_name VARCHAR(255),username VARCHAR(255),pass VARCHAR(255),contact_no INT,address VARCHAR(255)); 
+create table train (id INT primary key DEFAULT nexval('train_seq'),first_name VARCHAR(255),last_name VARCHAR(255),username VARCHAR(255),pass VARCHAR(255),contact_no INT,address VARCHAR(255)); 
