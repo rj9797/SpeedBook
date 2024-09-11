@@ -1,0 +1,15 @@
+type Query {
+    ticketById(id: ID): ReservedTicket
+}
+
+type ReservedTicket {
+    id: ID
+    name: String
+    train: Train
+}
+
+type Train {
+    id: ID
+    name: String
+    UID: String
+}
