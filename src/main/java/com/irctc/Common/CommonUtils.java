@@ -13,7 +13,7 @@ public class CommonUtils {
 	
 	public static <T>String fromJson(T object) {
 		try {
-			return gson.toJson(object);
+			return gson.toJson(object); 
 		}catch (Exception e) {
 			System.out.println("Exception while converting from  json : "+e);
 			throw e;
