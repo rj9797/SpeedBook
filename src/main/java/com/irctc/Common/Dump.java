@@ -12,7 +12,7 @@ public class Dump {
 	}
 	
 	public int[] dailyTemperatures(int[] temperatures) {
-		
+		 
 	}
 	
 }
