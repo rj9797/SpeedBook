@@ -14,26 +14,30 @@ public class Dump {
 	
 	public void start() {
 		System.out.println('z'-1);
-		canConstruct("hel","heee");
+		System.out.println("Construction "+canConstruct("aaaaa","aaaaasde"));
 	}
 	
 	 public boolean canConstruct(String ransomNote, String magazine) {
 		 Map<Character,Integer> map = new HashMap<Character,Integer>();
 		 char[] charArr = ransomNote.toCharArray();
+		 int y = 1;
+		 Integer z = 1;
 		 for(char c : charArr) {
-			 Integer a = map.get((int)c);
+			 Integer a = map.get(c);
+			 System.out.println("A: "+a);
 			 if(a!=null) {
-				 map.put(c, a++);
+				 a++;
+				 map.put(c, a);
 				 continue;
 			 }
 			 map.put(c, 1);
 		 }
 		 System.out.println("Map beforee: "+map);
 		 for(char c: magazine.toCharArray()) {
-			 map.computeIfPresent(c, (key,value) -> value-11);
+			 map.computeIfPresent(c, (key,value) -> value-1);
 		 }
 		 System.out.println("Map afterr : "+map);
-		 return false;
+		 return map.values().stream().noneMatch(x->x > 0);
 	 }
 	 
 	 public static void main(String[] args) {
