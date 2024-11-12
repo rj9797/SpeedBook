@@ -15,8 +15,10 @@ public class TrainController {
 	
 	@PostMapping
 	public ResponseEntity<String> bookTicket(@RequestBody String requestBody) {
+		
 		String response = null;
 		ReservationTicketDTO reservationDto = new ReservationTicketDTO();
 		return ResponseEntity.ok().body(response);
 	}
 }
+ 
