@@ -3,6 +3,7 @@ package com.irctc.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.irctc.model.Passenger;
 import com.irctc.model.Train;
 import com.irctc.repository.TrainDetailsDAO;
 
@@ -13,13 +14,13 @@ public class TrainService {
 	@Autowired
 	TrainDetailsDAO dao;
 	
-	public Train getTrainDetailsByName(String name) {
+	public int getTrainDetailsByName(Passenger passenger) {
 		Train train = null;
 		try {
-			train = dao.getTrainDetailsByName(name);
+			return dao.bookTicket(passenger);
 		}catch (Exception e) {
-			throw e;
+			e.printStackTrace();
+			return 0;
 		}
-		return train;
 	}
 }

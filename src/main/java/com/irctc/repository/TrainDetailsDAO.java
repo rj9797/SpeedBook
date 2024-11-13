@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Repository;
 
+import com.irctc.model.Passenger;
 import com.irctc.model.Train;
 
 @Repository
@@ -18,24 +19,10 @@ public class TrainDetailsDAO {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
-	public Train getTrainDetailsByName(String name) {
-		jdbcTemplate.update("",new PreparedStatementSetter() {
-			
-			@Override
-			public void setValues(PreparedStatement ps) throws SQLException {
-				ps.setString(1, name);
-				
-			}
-		},new ResultSetExtractor<Train>() {
-			
-			@Override
-			public Train extractData(ResultSet rs) throws SQLException, DataAccessException {
-				Train t = new Train();
-				t.setName(rs.getString(""));
-				return t;
-			}
-			
-		});
-		return null;
+	public int bookTicket(Passenger passenger) {
+		 String sql = "INSERT INTO Passenger (PassengerID, Name, Age, Gender) VALUES (?, ?, ?, ?)";
+	        
+	        // Using jdbcTemplate to execute the insert
+	        return jdbcTemplate.update(sql, passenger.getId(), passenger.getName(), passenger.getAge(), passenger.getAge());
 	}
 }
