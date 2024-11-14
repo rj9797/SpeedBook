@@ -4,6 +4,8 @@ import java.math.BigInteger;
 
 import org.springframework.stereotype.Service;
 
+import com.irctc.enums.StatusEnum;
+
 @Service
 public class Passenger {
 	private BigInteger id;
@@ -12,7 +14,7 @@ public class Passenger {
 	private String name;
 	private int age;
 	private char preference;
-	private int status;
+	private StatusEnum status;
 	public BigInteger getId() {
 		return id;
 	}
@@ -49,10 +51,10 @@ public class Passenger {
 	public void setPreference(char preference) {
 		this.preference = preference;
 	}
-	public int getStatus() {
+	public StatusEnum getStatus() {
 		return status;
 	}
-	public void setStatus(int status) {
+	public void setStatus(StatusEnum status) {
 		this.status = status;
 	}
 	@Override
