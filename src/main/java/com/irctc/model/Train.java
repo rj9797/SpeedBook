@@ -5,16 +5,16 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Train {
-    private BigInteger id;
+    private Integer id;
     private String name;
     private Timestamp time;
     private String runsOn;
     private Date startTime;
     private int totalSeats;
-	public BigInteger getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(BigInteger id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {
