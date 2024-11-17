@@ -26,6 +26,7 @@ public class TrainService {
 		
 		Train train = null;
 		try {
+			//call stored procedure
 			return dao.bookTicket(passenger);
 		}catch (Exception e) {
 			e.printStackTrace();
