@@ -15,9 +15,6 @@ public class TrainBookingRequestVO {
 	private int noOfPassengers;
 	private String sourceStation;
 	private int destinationStation;
-	
-	
-	
 	public BigInteger getUserId() {
 		return userId;
 	}

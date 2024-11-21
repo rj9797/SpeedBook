@@ -29,7 +29,7 @@ public class TrainController {
 
 	ObjectMapper mapper = new ObjectMapper();
 
-	@PostMapping
+	@PostMapping("/book-ticket")
 	public ResponseEntity<String> bookTicket(@RequestBody String requestBody) {
 		System.out.println("Inside the controller");
 		try {
