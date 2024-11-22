@@ -36,6 +36,10 @@ VALUES
 select * from passenger;
 select * from Train;
 select * from train where trainid = 1;
+select * from booked_ticket bt ;
+
+INSERT INTO passenger (ticketId, passengerId, name, age, gender) 
+VALUES (101, 69, 'John Doe', 30, 'M');
 
 
 
@@ -60,12 +64,13 @@ BEGIN
         -- Update seats in the train table
         
         -- Insert booking information in the passenger_status table
-        INSERT INTO booked_ticket (book_seat.train_id, book_seat.passenger_id, status)
+        INSERT INTO booked_ticket (train_id, passenger_id, status)
         VALUES (book_seat.train_id, passenger_id, 'Confirmed');
     ELSE
         -- Insert a waiting list status if no seats are available
-        INSERT INTO passenger_status (book_seat.train_id, book_seat.passenger_id, status)
+        INSERT INTO passenger_status (train_id, passenger_id, status)
         VALUES (book_seat.train_id, passenger_id, 'Waiting');
     END IF;
 END;
 $$;
+commit;
